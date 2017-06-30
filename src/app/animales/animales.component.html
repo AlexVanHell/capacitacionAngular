@@ -1,37 +1,56 @@
 <h1>Animales</h1>
 <section>
-	<p>
-		Nombre: <input type="text" name="nombre" [(ngModel)]="animalNuevo.nombre">
+	<p class="field">
+		<label>Nombre:</label> 
+		<input type="text" name="nombre" [(ngModel)]="animalNuevo.nombre">
 	</p>
-	<p>
-		Especie: <input type="text" name="especie" [(ngModel)]="animalNuevo.especie">
+	<p class="field">
+		<label>Especie:</label>
+		<input type="text" name="especie" [(ngModel)]="animalNuevo.especie">
 	</p>
-	<p>
-		Edad: <input type="text" name="edad" [(ngModel)]="animalNuevo.edad">
+	<p class="field">
+		<label>Edad:</label>
+		<input type="text" name="edad" [(ngModel)]="animalNuevo.edad">
 	</p>
-	<p>
-		No. patas: <input type="text" name="patas" [(ngModel)]="animalNuevo.patas">
+	<p class="field">
+		<label>No. patas:</label>
+		<input type="text" name="patas" [(ngModel)]="animalNuevo.patas">
 	</p>
-	<p>
-		Sexo: <input type="checkbox" name="sexo" [(ngModel)]="animalNuevo.sexo"> {{ animalNuevo.sexo ? 'Hembra' : 'Macho' }}
+	<p class="field">
+		<label>Sexo:</label>
+		<input type="checkbox" name="sexo" [(ngModel)]="animalNuevo.sexo"> 
+		{{ animalNuevo.sexo ? 'Hembra' : 'Macho' }}
 	</p>
-	<p>
-		Imagen(url): <input type="text" name="imagen" [(ngModel)]="animalNuevo.imagen">
+	<p class="field">
+		<label>Imagen(url):</label>
+		<input type="text" name="imagen" [(ngModel)]="animalNuevo.imagen">
 	</p>
 	<button (click)="agregar()">Agregar Animal</button>
 </section>
 <br>
+<div>
+	<h1>
+		{{ persona }}
+	</h1>
+</div>
 <ul>
 	<li *ngFor="let animal of animales" (click)="seleccionarAnimal(animal)">
-		<h3>{{ animal.nombre | uppercase }}</h3>
-		<p>Especie: {{ animal.especie }}</p>
-		<p>Edad: {{ animal.edad }}</p>
-		<p>Numero de patas: {{ animal.patas }}</p>
-		<!-- <p *ngIf="animal.sexo">Sexo: &#9890;</p>
-		<p *ngIf="!animal.sexo">Sexo: &#9891;</p> -->
-		<p [ngClass]="{ 'bg_pink': animal.sexo == true, 'bg_blue': animal.sexo == false }" [style.fontSize]="animal.sexo ? '22px' : '18px'">
-			Sexo: <strong [innerHTML]="animal.sexo | simbolosexo"></strong>
-		</p>
-		<img src="{{ animal.imagen }}">
+		<div>
+			<h3>{{ animal.nombre | uppercase }}</h3>
+			<p>Especie: {{ animal.especie }}</p>
+			<p>Edad: {{ animal.edad }}</p>
+			<p>Numero de patas: {{ animal.patas }}</p>
+			<!-- <p *ngIf="animal.sexo">Sexo: &#9890;</p>
+			<p *ngIf="!animal.sexo">Sexo: &#9891;</p> -->
+			<p>
+				Sexo: 
+				<span [ngClass]="{ 'bg_pink': animal.sexo == true, 'bg_blue': animal.sexo == false }">
+					<strong [innerHTML]="animal.sexo | simbolosexo"></strong>
+				</span>
+			</p>
+			</div>
+				<img src="{{ animal.imagen }}">
+			<div>
+		</div>
 	</li>
 </ul>

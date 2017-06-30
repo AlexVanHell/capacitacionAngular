@@ -1,7 +1,16 @@
-button {
-	background-color: #424242;
-	padding: 16px;
-	border: none;
-	border-radius: 4px;
-	color: #fff;
+ul {
+	display: block;
+}
+
+ul li {
+	display: block;
+	padding: 12px;
+	background-color: #f5f5f5;
+	border-radius: 3px;
+	margin: 4px;
+	cursor: pointer;
+}
+
+ul li:hover {
+	background-color: lightblue;
 }

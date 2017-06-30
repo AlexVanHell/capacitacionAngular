@@ -1,20 +1,61 @@
-.bg_pink {
-	background-color: pink;
-}
-
-.bg_blue {
-	background-color: blue;
-}
-
-button {
-	background-color: #424242;
-	padding: 16px;
-	border: none;
-	border-radius: 4px;
-	color: #fff;
-}
-
 img {
 	max-width: 400px;
  	max-height: 200px;
+}
+
+section {
+	margin: 0 auto;
+}
+
+ul {
+	margin: 0 auto;
+	display: block;
+	width: auto;
+}
+
+ul li {
+	display: block;
+	margin: 4px;
+	padding: 12px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+ul li div {
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+	vertical-align: top;
+}
+
+ul li h3 {
+	font-weight: normal;
+	font-size: 24px;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 24px;
+}
+
+ul li p {
+	margin: 0;
+	margin-bottom: 8px;
+}
+
+ul li:hover {
+	background-color: lightblue;
+}
+
+li span {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	font-size: 28px;
+	border-radius: 100%;
+}
+
+span strong{
+	color: #fff;
+	display: inline-block;
+	vertical-align: middle;
 }

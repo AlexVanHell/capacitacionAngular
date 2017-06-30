@@ -34,6 +34,10 @@ export class AppComponent {
 
   }
 
+  cambiarPersona(elegido: string) {
+    this.posicionEscogida = elegido;
+  }
+
   mostrarAnimalElegido(animal: Animal) {
     alert('El nombre del animal elegido es:' + animal.nombre);    
   }
