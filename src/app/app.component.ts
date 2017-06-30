@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'app works!';
   arreglo: string[] = ['Luis', 'Fernanda', 'Jose', 'Jessica', 'Adrian'];
   posicionEscogida: string;
+  animalElegido: Animal;
 
   constructor() {
   	this.posicionEscogida = this.arreglo[4].toString();
@@ -39,7 +40,7 @@ export class AppComponent {
   }
 
   mostrarAnimalElegido(animal: Animal) {
-    alert('El nombre del animal elegido es:' + animal.nombre);    
+    this.animalElegido = animal;    
   }
 
 }

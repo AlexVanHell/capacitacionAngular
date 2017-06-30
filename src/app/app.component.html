@@ -13,3 +13,10 @@
 	<br>
 	<app-animales [persona]="posicionEscogida" (onAnimalSelect)="mostrarAnimalElegido($event)"></app-animales>
 </div>
+
+<div class="pop_up" *ngIf="animalElegido">
+	<section>
+		<span class="close" (click)="animalElegido = null">X</span>
+		<img src="{{ animalElegido.imagen }}">
+	</section>
+</div>
