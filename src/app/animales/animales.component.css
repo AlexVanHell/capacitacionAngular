@@ -1,0 +1,20 @@
+.bg_pink {
+	background-color: pink;
+}
+
+.bg_blue {
+	background-color: blue;
+}
+
+button {
+	background-color: #424242;
+	padding: 16px;
+	border: none;
+	border-radius: 4px;
+	color: #fff;
+}
+
+img {
+	max-width: 400px;
+ 	max-height: 200px;
+}

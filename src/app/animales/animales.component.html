@@ -1,0 +1,37 @@
+<h1>Animales</h1>
+<section>
+	<p>
+		Nombre: <input type="text" name="nombre" [(ngModel)]="animalNuevo.nombre">
+	</p>
+	<p>
+		Especie: <input type="text" name="especie" [(ngModel)]="animalNuevo.especie">
+	</p>
+	<p>
+		Edad: <input type="text" name="edad" [(ngModel)]="animalNuevo.edad">
+	</p>
+	<p>
+		No. patas: <input type="text" name="patas" [(ngModel)]="animalNuevo.patas">
+	</p>
+	<p>
+		Sexo: <input type="checkbox" name="sexo" [(ngModel)]="animalNuevo.sexo"> {{ animalNuevo.sexo ? 'Hembra' : 'Macho' }}
+	</p>
+	<p>
+		Imagen(url): <input type="text" name="imagen" [(ngModel)]="animalNuevo.imagen">
+	</p>
+	<button (click)="agregar()">Agregar Animal</button>
+</section>
+<br>
+<ul>
+	<li *ngFor="let animal of animales" (click)="seleccionarAnimal(animal)">
+		<h3>{{ animal.nombre | uppercase }}</h3>
+		<p>Especie: {{ animal.especie }}</p>
+		<p>Edad: {{ animal.edad }}</p>
+		<p>Numero de patas: {{ animal.patas }}</p>
+		<!-- <p *ngIf="animal.sexo">Sexo: &#9890;</p>
+		<p *ngIf="!animal.sexo">Sexo: &#9891;</p> -->
+		<p [ngClass]="{ 'bg_pink': animal.sexo == true, 'bg_blue': animal.sexo == false }" [style.fontSize]="animal.sexo ? '22px' : '18px'">
+			Sexo: <strong [innerHTML]="animal.sexo | simbolosexo"></strong>
+		</p>
+		<img src="{{ animal.imagen }}">
+	</li>
+</ul>

@@ -1,3 +1,14 @@
-<h1>
-  {{title}}
-</h1>
+<!-- <h1>{{ otroTitulo }}</h1>
+<p>{{ nombrePersona }}</p>
+<p>{{ edadPersona }}</p>
+<input type="text" name="nombre" [(ngModel)]="edadPersona">
+<button (click)="cambiarNombre()">Boton</button> -->
+
+<h1>{{ posicionEscogida }}</h1>
+
+<ul>
+	<li *ngFor="let persona of arreglo" >{{ persona }}</li>
+</ul>
+
+<br>
+<app-animales [persona]="posicionEscogida" (onAnimalSelect)="mostrarAnimalElegido($event)"></app-animales>
