@@ -1,14 +1,14 @@
-import { MyappPage } from './app.po';
+import { CapaAngularPage } from './app.po';
 
-describe('myapp App', function() {
-  let page: MyappPage;
+describe('capa-angular App', () => {
+  let page: CapaAngularPage;
 
   beforeEach(() => {
-    page = new MyappPage();
+    page = new CapaAngularPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!!');
   });
 });

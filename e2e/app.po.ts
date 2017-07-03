@@ -1,6 +1,6 @@
-import { browser, element, by } from 'protractor';
+import { browser, by, element } from 'protractor';
 
-export class MyappPage {
+export class CapaAngularPage {
   navigateTo() {
     return browser.get('/');
   }

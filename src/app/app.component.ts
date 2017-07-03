@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'app works!';
   arreglo: string[] = ['Luis', 'Fernanda', 'Jose', 'Jessica', 'Adrian'];
   posicionEscogida: string;
+  personaInstancia = new Persona('Juan', 'Pérez');
   animalElegido: Animal;
 
   constructor() {

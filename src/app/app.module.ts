@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AnimalesComponent } from './animales/animales.component';
 import { SimbolosexoPipe } from './simbolosexo.pipe';
+import { SpotifyComponent } from './spotify/spotify.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimalesComponent,
-    SimbolosexoPipe
+    SimbolosexoPipe,
+    SpotifyComponent
   ],
   imports: [
     BrowserModule,
