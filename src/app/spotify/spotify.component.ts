@@ -15,7 +15,7 @@ export class SpotifyComponent implements OnInit {
 
 	constructor() {
 		this.searchControl.valueChanges
-			.filter(text => text.length >= 3 )
+			.filter(text => text.length >= 3)
 			.debounceTime(400)
 			.distinctUntilChanged()
 			.subscribe(value => {

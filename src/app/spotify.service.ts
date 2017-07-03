@@ -8,8 +8,8 @@ export class SpotifyService {
 
   constructor(private http: Http) {}
 
-  getItems(): Observable<any> {
-  	return this.http.get(`https://api.spotify.com/v1/search&q=`)
+  getItems(busqueda: string): Observable<any> {
+  	return this.http.get(`https://api.spotify.com/v1/search?q=${busqueda}&type=artist`)
   }
 
 
