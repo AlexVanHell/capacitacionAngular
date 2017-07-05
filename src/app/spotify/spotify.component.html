@@ -4,15 +4,16 @@
 <div class="field">
 	<input type="search" name="search" [formControl]="searchControl" placeholder="Buscar">
 </div>
-<p *ngIf="estaCargando">Cargando...</p>
 <ul>
 	<li *ngFor="let pokemon of listaPokemon;let i=index">
-		<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ i + offset + 1 }}.png">
+		<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ i + 1 }}.png">
 		<span>
 			<h2>{{ pokemon.name }}</h2>
-			<p>Numero: {{ i + offset + 1 }}</p>
+			<p>Numero: {{ i + 1 }}</p>
 		</span>
 	</li>
 </ul>
-<br>
+<br />
+<p *ngIf="estaCargando">Cargando...</p>
+<br />
 <button (click)="obtenerPokemones()">Cargar otros</button>

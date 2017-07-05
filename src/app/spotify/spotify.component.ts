@@ -15,7 +15,7 @@ import { SpotifyService } from './spotify.service';
 export class SpotifyComponent implements OnInit {
 	searchControl = new FormControl();
 	estaCargando: boolean;
-	listaPokemon: any;
+	listaPokemon: any = [];
 	offset: number = 0;
 	clicks: number = 0;
 
@@ -37,13 +37,14 @@ export class SpotifyComponent implements OnInit {
 
 	obtenerPokemones() {
 		this.estaCargando = true;
-		this.spoServ.getPokemones(this.clicks*20)
+		this.spoServ.getPokemones(this.offset)
 			.subscribe(response => {
-				this.listaPokemon = response.results;
-				console.log(this.listaPokemon);
-				this.estaCargando = false;
-				this.offset = this.clicks * 20;
+				for( let item of response.results ) {
+					this.listaPokemon.push(item);
+				}
 				this.clicks++;
+				this.offset = this.clicks * 20;
+				this.estaCargando = false;
 			});
 	}
 

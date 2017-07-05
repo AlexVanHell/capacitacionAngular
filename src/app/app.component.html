@@ -3,7 +3,13 @@
 <p>{{ edadPersona }}</p>
 <input type="text" name="nombre" [(ngModel)]="edadPersona">
 <button (click)="cambiarNombre()">Boton</button> -->
-<app-spotify></app-spotify>
+<nav>
+	<a routerLink="pokemon">Pokemon</a>
+	<a routerLink="animales">Animales</a>
+</nav>
+<router-outlet></router-outlet>
+
+<!-- <app-spotify></app-spotify>
 <br />
 <div class="page_container">
 	<h1>{{ posicionEscogida }}</h1>
@@ -14,11 +20,11 @@
 
 	<br>
 	<app-animales [persona]="posicionEscogida" (onAnimalSelect)="mostrarAnimalElegido($event)"></app-animales>
-</div>
+</div> -->
 
-<div class="pop_up" *ngIf="animalElegido">
+<!-- <div class="pop_up" *ngIf="animalElegido">
 	<section>
 		<span class="close" (click)="animalElegido = null">X</span>
 		<img src="{{ animalElegido.imagen }}">
 	</section>
-</div>
+</div> -->
