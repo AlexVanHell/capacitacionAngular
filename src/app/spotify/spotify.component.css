@@ -3,3 +3,37 @@ input {
 	border: 1px solid #424242;
 	border-radius: 3px;
 }
+
+ul {
+	display: block;
+}
+
+ul li {
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 4px;
+	vertical-align: top;
+	margin: 6px;
+	padding: 12px;
+	text-align: center;
+	width: calc(25% - 12px);
+}
+
+ul li:hover {
+	background-color: lightblue;
+}
+
+ul li img {
+	margin: 0;
+}
+
+ul li h2 {
+	font-weight: bold;
+	margin: 0;
+	padding: 4px;
+}
+
+ul li p {
+	margin: 0;
+	padding-top: 4px;
+}
