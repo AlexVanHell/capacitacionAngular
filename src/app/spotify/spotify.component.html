@@ -5,7 +5,7 @@
 	<input type="search" name="search" [formControl]="searchControl" placeholder="Buscar">
 </div>
 <ul>
-	<li *ngFor="let pokemon of listaPokemon;let i=index">
+	<li *ngFor="let pokemon of listaPokemon;let i=index" (click)="seleccionarPoke(i+1)">
 		<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ i + 1 }}.png">
 		<span>
 			<h2>{{ pokemon.name }}</h2>

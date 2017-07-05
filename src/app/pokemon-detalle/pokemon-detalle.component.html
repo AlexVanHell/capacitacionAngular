@@ -1,0 +1,23 @@
+<section style="text-align: center;">
+	<h1 *ngIf="estaCargando">Cargando Pokemon...</h1>
+</section>
+
+<section style="text-align: center;" *ngIf="pokemon">
+
+	<h1> {{ pokemon.name | uppercase }} </h1>
+	<input type="text" name="nombrePoke" [(ngModel)]="pokemon.name">
+	<img src="{{pokemon.sprites.front_default}}">
+	<img src="{{pokemon.sprites.back_default}}">
+	<img src="{{pokemon.sprites.front_shiny}}">
+	<img src="{{pokemon.sprites.back_shiny}}">
+
+	<br>
+	<h2>Habilidades</h2>
+	<ul style="width: 500px;display: inline-block;padding: 0;">
+		<li style="display: block;" *ngFor="let item of pokemon.abilities">
+			{{ item.ability.name }}
+			<br>
+		</li>
+	</ul>
+	<router-outlet></router-outlet>
+</section>

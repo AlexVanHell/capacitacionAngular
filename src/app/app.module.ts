@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { CanDeactivateGuard } from './candeactivate';
 
 import { AppComponent } from './app.component';
 import { AnimalesComponent } from './animales/animales.component';
 import { SimbolosexoPipe } from './simbolosexo.pipe';
 import { SpotifyComponent } from './spotify/spotify.component';
+import { PokemonDetalleComponent } from './pokemon-detalle/pokemon-detalle.component';
 
 const routes: Routes = [
 	{
@@ -17,6 +19,22 @@ const routes: Routes = [
 	{
 		path: 'pokemon',
 		component: SpotifyComponent
+	},
+	{
+		path: '',
+		redirectTo: '/pokemon',
+		pathMatch: 'full'
+	},
+	{
+		path: 'pokemon/:numeropoke',
+		component: PokemonDetalleComponent,
+		canDeactivate: [CanDeactivateGuard]
+		/*children: [
+			{
+				path: 'habilidades',
+				component: PokemonHabilidadesComponent,
+			}
+		]*/
 	}
 ];
 
@@ -25,7 +43,8 @@ const routes: Routes = [
 		AppComponent,
 		AnimalesComponent,
 		SimbolosexoPipe,
-		SpotifyComponent
+		SpotifyComponent,
+		PokemonDetalleComponent
 	],
 	imports: [
 		BrowserModule,
@@ -34,7 +53,7 @@ const routes: Routes = [
 		HttpModule,
 		RouterModule.forRoot(routes, { enableTracing: true })
 	],
-	providers: [],
+	providers: [CanDeactivateGuard],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

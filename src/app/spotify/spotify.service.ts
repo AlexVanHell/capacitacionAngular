@@ -20,4 +20,10 @@ export class SpotifyService {
 				.map(res => res.json());
 	}
 
+	getSinglePokemon(numero: number): Observable<any> {
+		return this.http
+				.get(`http://pokeapi.co/api/v2/pokemon/${numero}`)
+				.map(res => res.json());
+	}
+
 }

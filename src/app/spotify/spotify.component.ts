@@ -5,6 +5,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import { FormControl } from '@angular/forms';
 import { SpotifyService } from './spotify.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-spotify',
@@ -19,7 +20,7 @@ export class SpotifyComponent implements OnInit {
 	offset: number = 0;
 	clicks: number = 0;
 
-	constructor(private spoServ: SpotifyService) {
+	constructor(private spoServ: SpotifyService, private router: Router) {
 	}
 
 	ngOnInit() {
@@ -46,6 +47,10 @@ export class SpotifyComponent implements OnInit {
 				this.offset = this.clicks * 20;
 				this.estaCargando = false;
 			});
+	}
+
+	seleccionarPoke(numero: number) {
+		this.router.navigate(['pokemon/'+ numero]);
 	}
 
 }
