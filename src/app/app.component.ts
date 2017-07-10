@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Persona } from './models/persona';
 import { Animal } from './models/animal';
+import { AuthService } from './auth/auth.service'
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent {
   personaInstancia = new Persona('Juan', 'Pérez');
   animalElegido: Animal;
 
-  constructor() {
+  constructor(private auth: AuthService) {
   	this.posicionEscogida = this.arreglo[4].toString();
 
     for(let i = 0; i < this.arreglo.length; i++){ //bucle para recorrer las posiciones del arreglo

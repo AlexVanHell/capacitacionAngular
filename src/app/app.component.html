@@ -4,9 +4,16 @@
 <input type="text" name="nombre" [(ngModel)]="edadPersona">
 <button (click)="cambiarNombre()">Boton</button> -->
 <nav>
-	<a routerLink="pokemon">Pokemon</a>
-	<a routerLink="animales">Animales</a>
+	<a routerLink="pokemon" routerLinkActive="active">Pokemon</a>
+	<a routerLink="animales" routerLinkActive="active">Animales</a>
+	<a routerLink="login" routerLinkActive="active" *ngIf="!auth.isLogged()">Iniciar Sesión</a>
+	<a routerLink="" *ngIf="auth.isLogged()" (click)="auth.logout()">Cerrar Sesión</a>
 </nav>
+<div *ngIf="auth.getUser()">
+	<p>
+		Iniciado como: {{ auth.getUser().user }}
+	</p>
+</div>
 <router-outlet></router-outlet>
 
 <!-- <app-spotify></app-spotify>

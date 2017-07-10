@@ -5,7 +5,9 @@
 <section style="text-align: center;" *ngIf="pokemon">
 
 	<h1> {{ pokemon.name | uppercase }} </h1>
-	<input type="text" name="nombrePoke" [(ngModel)]="pokemon.name">
+	<div class="field">
+		<input type="text" name="nombrePoke" [(ngModel)]="pokemon.name">
+	</div>
 	<img src="{{pokemon.sprites.front_default}}">
 	<img src="{{pokemon.sprites.back_default}}">
 	<img src="{{pokemon.sprites.front_shiny}}">

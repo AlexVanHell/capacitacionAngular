@@ -1,15 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { CanDeactivateGuard } from './candeactivate';
+
+import { AuthService } from './auth/auth.service';
 
 import { AppComponent } from './app.component';
 import { AnimalesComponent } from './animales/animales.component';
 import { SimbolosexoPipe } from './simbolosexo.pipe';
 import { SpotifyComponent } from './spotify/spotify.component';
 import { PokemonDetalleComponent } from './pokemon-detalle/pokemon-detalle.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
 	{
@@ -18,7 +21,8 @@ const routes: Routes = [
 	},
 	{
 		path: 'pokemon',
-		component: SpotifyComponent
+		component: SpotifyComponent,
+		canActivate: [AuthService]
 	},
 	{
 		path: '',
@@ -28,13 +32,18 @@ const routes: Routes = [
 	{
 		path: 'pokemon/:numeropoke',
 		component: PokemonDetalleComponent,
-		canDeactivate: [CanDeactivateGuard]
+		canDeactivate: [CanDeactivateGuard],
+		canActivate: [AuthService]
 		/*children: [
 			{
 				path: 'habilidades',
 				component: PokemonHabilidadesComponent,
 			}
 		]*/
+	},
+	{
+		path: 'login',
+		component: LoginComponent
 	}
 ];
 
@@ -44,7 +53,8 @@ const routes: Routes = [
 		AnimalesComponent,
 		SimbolosexoPipe,
 		SpotifyComponent,
-		PokemonDetalleComponent
+		PokemonDetalleComponent,
+		LoginComponent
 	],
 	imports: [
 		BrowserModule,
@@ -53,7 +63,7 @@ const routes: Routes = [
 		HttpModule,
 		RouterModule.forRoot(routes, { enableTracing: true })
 	],
-	providers: [CanDeactivateGuard],
+	providers: [CanDeactivateGuard, AuthService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

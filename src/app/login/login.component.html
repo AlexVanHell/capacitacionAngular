@@ -1,0 +1,18 @@
+<form [formGroup]="formLogin" (submit)="validarForm()">
+	<h1>
+		Iniciar Sesión
+	</h1>
+	<div class="field">
+		<input type="text" name="user" formControlName="user" placeholder="Usuario">
+		<span *ngIf="!formLogin.get('user').valid && formLogin.get('user').touched">Por favor escriba el nombre de usuario</span>
+	</div>
+	<br />
+	<div class="field">
+		<input type="text" name="password" formControlName="password" placeholder="Contraseña">
+		<span *ngIf="!formLogin.get('password').valid && formLogin.get('password').dirty">Por favor escriba su contraseña con al menos 6 caracteres</span>
+	</div>
+	<br />
+	<div>
+		<input type="submit" value="Iniciar">
+	</div>
+</form>

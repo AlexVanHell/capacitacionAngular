@@ -45,3 +45,8 @@ button {
 	height: 40px;
 	color: #212121;
 }
+
+.active {
+	background-color: lightblue !important;
+	color: #000 !important;
+}

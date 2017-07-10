@@ -1,0 +1,42 @@
+form {
+	margin: 56px auto;
+	border: 1px solid #bdbdbd;
+	border-radius: 4px;
+	padding: 32px;
+	max-width: 540px;
+}
+
+form h1 {
+	font-weight: normal;
+	font-size: 32px;
+	color: #616161;
+	margin: 0;
+	margin-bottom: 24px;
+	text-align: center;
+}
+
+form input {
+	font-size: 17px;
+	height: 48px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	width: calc(100% - 32px);
+}
+
+form span {
+	background-color: red;
+	padding: 8px;
+	display: inline-block;
+	font-size: 13px;
+	border-radius: 3px;
+	margin-top: 8px;
+	color: #fff;
+}
+
+form input[type="submit"] {
+	width: 100%;
+	cursor: pointer;
+	border-radius: 5px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+	background-color: blue;
+	color: #fff;
+}
