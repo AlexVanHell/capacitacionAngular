@@ -1,4 +1,33 @@
 <h1>Animales</h1>
+<br>
+<div>
+	<h1>
+		{{ persona }}
+	</h1>
+</div>
+<ul>
+	<li *ngFor="let animal of animales" (click)="seleccionarAnimal(animal)" [@seleccion]="animal.seleccionado ? 'activo' : 'inactivo'" [@entrada]>
+		<p style="text-align: right;">
+			<button (click)="eliminarAnimal(animal)" title="Eliminar">X</button>
+		</p>
+		<div>
+			<h3>{{ animal.nombre | uppercase }}</h3>
+			<p>Especie: {{ animal.especie }}</p>
+			<p>Edad: {{ animal.edad }}</p>
+			<p>Numero de patas: {{ animal.patas }}</p>
+			<!-- <p *ngIf="animal.sexo">Sexo: &#9890;</p>
+			<p *ngIf="!animal.sexo">Sexo: &#9891;</p> -->
+			<p>
+				Sexo: 
+				<span [ngClass]="{ 'bg_pink': animal.sexo == true, 'bg_blue': animal.sexo == false }">
+					<strong [innerHTML]="animal.sexo | simbolosexo"></strong>
+				</span>
+			</p>
+		</div><div>
+			<img src="{{ animal.imagen }}">
+		</div>
+	</li>
+</ul>
 <section>
 	<p class="field">
 		<label>Nombre:</label> 
@@ -27,29 +56,3 @@
 	</p>
 	<button (click)="agregar()">Agregar Animal</button>
 </section>
-<br>
-<div>
-	<h1>
-		{{ persona }}
-	</h1>
-</div>
-<ul>
-	<li *ngFor="let animal of animales" (click)="seleccionarAnimal(animal)">
-		<div>
-			<h3>{{ animal.nombre | uppercase }}</h3>
-			<p>Especie: {{ animal.especie }}</p>
-			<p>Edad: {{ animal.edad }}</p>
-			<p>Numero de patas: {{ animal.patas }}</p>
-			<!-- <p *ngIf="animal.sexo">Sexo: &#9890;</p>
-			<p *ngIf="!animal.sexo">Sexo: &#9891;</p> -->
-			<p>
-				Sexo: 
-				<span [ngClass]="{ 'bg_pink': animal.sexo == true, 'bg_blue': animal.sexo == false }">
-					<strong [innerHTML]="animal.sexo | simbolosexo"></strong>
-				</span>
-			</p>
-		</div><div>
-			<img src="{{ animal.imagen }}">
-		</div>
-	</li>
-</ul>

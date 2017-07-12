@@ -5,4 +5,5 @@ export class Animal {
 	patas: number;
 	sexo: boolean;
 	imagen?: string;
+	seleccionado?: boolean = false;
 }

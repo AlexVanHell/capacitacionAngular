@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { CanDeactivateGuard } from './candeactivate';
@@ -60,6 +61,7 @@ const routes: Routes = [
 		BrowserModule,
 		FormsModule,
 		ReactiveFormsModule,
+		BrowserAnimationsModule,
 		HttpModule,
 		RouterModule.forRoot(routes, { enableTracing: true })
 	],
